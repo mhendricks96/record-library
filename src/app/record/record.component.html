@@ -1,0 +1,11 @@
+<h2>{{singleRecord.title}}</h2>
+<h3>{{singleRecord.artist}}</h3>
+<h4>{{singleRecord.genre}}</h4>
+
+<ng-template [ngIf]="singleRecord.isOpened" [ngIfElse]="unopened">
+  <p>Last listined to: {{ singleRecord.lastHeard }}</p>
+</ng-template>
+
+<ng-template #unopened>
+  <p>This record has not been opened</p>
+</ng-template>
