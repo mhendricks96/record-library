@@ -1,0 +1,27 @@
+<!-- template driven form -->
+
+<h2>Add New Record</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+  <ul>
+    <li>
+      <label for="title">Title</label>
+      <input type="text" name="title" id="title" formControlName="title">
+    </li>
+    <li>
+      <label for="genre">Genre</label>
+      <select name="genre" id="genre" formControlName="genre">
+        <option value="pop">Pop</option>
+        <option value="hip-hop">Hip-Hop</option>
+        <option value="rock">Rock</option>
+        <option value="oldies">Oldies</option>
+        <option value="country">Country</option>
+        <option value="other">Other</option>
+      </select>
+    </li>
+    <li>
+      <label for="artist">Artist</label>
+      <input type="text" name="artist" id="artist" formControlName="artist">
+    </li>
+  </ul>
+  <button type="submit" [disabled]="!form.valid">Add Record</button>
+</form>
