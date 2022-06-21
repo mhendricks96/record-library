@@ -48,7 +48,19 @@ export class RecordListComponent implements OnInit {
       isOpened: false,
       lastHeard: ''
     },
+    {
+      id: 6,
+      title: 'the carter',
+      artist: 'lil wayne',
+      genre: 'hip-hop',
+      isOpened: false,
+      lastHeard: '12/03/2021'
+    },
   ]
+
+  onSingleRecordDelete(singleRecord: any) {
+    console.log('hi')
+  }
 
   constructor() { }
 
