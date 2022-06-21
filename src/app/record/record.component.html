@@ -1,10 +1,10 @@
 <div>
-  <h2>{{singleRecord.title}}</h2>
-  <h3>{{singleRecord.artist}}</h3>
-  <h4>{{singleRecord.genre}}</h4>
+  <h2>{{singleRecord.title | slice: 0:11 }}</h2>
+  <h3>{{singleRecord.artist | slice: 0:16 }}</h3>
+  <h4>{{singleRecord.genre | uppercase }}</h4>
   
   <ng-template [ngIf]="singleRecord.isOpened" [ngIfElse]="unopened">
-    <p>Last listined to: {{ singleRecord.lastHeard }}</p>
+    <p>Last listined to: {{ singleRecord.lastHeard | date }}</p>
   </ng-template>
   
   <ng-template #unopened>
