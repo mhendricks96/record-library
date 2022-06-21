@@ -7,14 +7,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 8px 0;
-}
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   margin: 8px 0;
+// }
 
 p {
   margin: 0;
@@ -289,4 +289,37 @@ svg#clouds {
     display: none;
     visibility: hidden;
   }
+}
+
+
+
+
+
+
+:host {
+  display: flex;
+  min-height: 100%;
+}
+nav {
+  width: 68px;
+  background-color: #53ace4;
+}
+nav .icon {
+  width: 48px;
+  height: 48px;
+  margin: 10px;
+}
+section {
+  width: 100%;
+  background-color: #32435b;
+}
+section > header {
+  color: #ffffff;
+  padding: 10px;
+}
+section > header > h1 {
+  font-size: 2em;
+}
+section > header .description {
+  font-style: italic;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-record',
@@ -8,7 +8,14 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 export class RecordComponent implements OnInit {
 
   @Input() singleRecord: any;
+  @Output() delete = new EventEmitter();
 
+
+  onDelete() {
+    this.delete.emit(this.singleRecord);
+
+    console.log(this.singleRecord.title, "deleted")
+  }
 
   constructor() { }
 

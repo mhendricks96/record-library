@@ -2,6 +2,8 @@
   <app-record
   *ngFor="let singleRecord of mediaItems"
   [singleRecord]="singleRecord"
+  (delete)="onSingleRecordDelete($event)"
+  [ngClass]="{ 'opened-records': singleRecord.isOpened === true, 'unopened-records': singleRecord.isOpened === false}"
   >
   </app-record>
 </section>
