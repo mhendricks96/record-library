@@ -6,6 +6,9 @@
     <li>
       <label for="title">Title</label>
       <input type="text" name="title" id="title" formControlName="title">
+      <div *ngIf="form.get('title')!.errors as titleErrors">
+        title has invalid characters
+      </div>
     </li>
     <li>
       <label for="genre">Genre</label>

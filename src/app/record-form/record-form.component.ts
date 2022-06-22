@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-record-form',
@@ -19,6 +19,8 @@ export class RecordFormComponent implements OnInit {
       artist: new FormControl(''),
     });
   }
+
+
   
 
   onSubmit(singleRecord: any) {

@@ -64,7 +64,6 @@ export class RecordListComponent implements OnInit {
   ];
 
   onSingleRecordDelete(singleRecord: any) {
-    console.log('hi');
   }
 
   constructor() {}
