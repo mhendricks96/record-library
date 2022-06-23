@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecordService } from '../record.service';
 
 @Component({
   selector: 'app-record-list',
@@ -6,67 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./record-list.component.scss'],
 })
 export class RecordListComponent implements OnInit {
-  mediaItems = [
-    {
-      id: 1,
-      title: '30',
-      artist: 'Adele',
-      genre: 'pop',
-      isOpened: true,
-      lastHeard: '12/03/2021',
-      isFavorite: false,
-    },
-    {
-      id: 2,
-      title: 'Purple Rain',
-      artist: 'Prince and the Revolution',
-      genre: 'pop',
-      isOpened: false,
-      lastHeard: '',
-      isFavorite: true,
-    },
-    {
-      id: 3,
-      title: 'Thriller',
-      artist: 'Michael Jackson',
-      genre: 'pop',
-      isOpened: true,
-      lastHeard: '08/15/2021',
-      isFavorite: false,
-    },
-    {
-      id: 4,
-      title: 'The Wall',
-      artist: 'Pink Floyd',
-      genre: 'rock',
-      isOpened: true,
-      lastHeard: '12/03/2021',
-      isFavorite: true,
-    },
-    {
-      id: 5,
-      title: 'Rumours',
-      artist: 'Fleetwood Mac',
-      genre: 'pop',
-      isOpened: false,
-      lastHeard: '',
-      isFavorite: false,
-    },
-    {
-      id: 6,
-      title: 'the carter',
-      artist: 'lil wayne',
-      genre: 'hip-hop',
-      isOpened: false,
-      lastHeard: '12/03/2021',
-      isFavorite: true,
-    },
-  ];
+  // i should change this to 'records' at some point, but i would then have obvously have to go around and change that where it is used
+  mediaItems: any;
 
   onSingleRecordDelete(singleRecord: any) {
+    this.recordService.delete(singleRecord)
   }
 
-  constructor() {}
+  constructor(private recordService: RecordService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.mediaItems = this.recordService.get();
+  }
 }

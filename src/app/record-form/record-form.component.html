@@ -13,12 +13,12 @@
     <li>
       <label for="genre">Genre</label>
       <select name="genre" id="genre" formControlName="genre">
-        <option value="pop">Pop</option>
-        <option value="hip-hop">Hip-Hop</option>
+        <option *ngFor="let genre of lookupLists.genres" [value]="genre">{{ genre }}</option>
+        <!-- <option value="hip-hop">Hip-Hop</option>
         <option value="rock">Rock</option>
         <option value="oldies">Oldies</option>
         <option value="country">Country</option>
-        <option value="other">Other</option>
+        <option value="other">Other</option> -->
       </select>
     </li>
     <li>

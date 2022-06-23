@@ -9,6 +9,9 @@ import { RecordListComponent } from './record-list/record-list.component';
 import { FavoriteDirective } from './favorite.directive';
 import { GenresListPipe } from './genre-list.pipe';
 import { RecordFormComponent } from './record-form/record-form.component';
+import { lookupListToken, lookupLists } from './providers';
+// dont need because i am now injecting my service with a decorator.
+// import { RecordService } from './record.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { RecordFormComponent } from './record-form/record-form.component';
     AppRoutingModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    // RecordService
+    { provide: lookupListToken, useValue: lookupLists }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
